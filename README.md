@@ -1,3 +1,4 @@
+# **Customer Churn Prediction Model**
 This project aims to develop a predictive model for customer churn using machine learning techniques. The model analyses customer data to identify those who are likely to discontinue using a service providing businesses with insights to improve retention strategies.
 
 If you find this project useful, please consider giving it a star ⭐ on GitHub. Contributions are also welcome.
