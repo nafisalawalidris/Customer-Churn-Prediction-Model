@@ -1,7 +1,10 @@
 version: 1
 services:
   - type: web
-    name: streamlit-app
+    name: my-streamlit-app
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "streamlit run app.py --server.port $PORT --server.address 0.0.0.0"
+    startCommand: "streamlit run app.py"
+    envVars:
+      - key: STREAMLIT_SERVER_PORT
+        value: "10000" # or your specific port
