@@ -1,8 +1,8 @@
 This project aims to develop a predictive model for customer churn using machine learning techniques. The model analyses customer data to identify those who are likely to discontinue using a service providing businesses with insights to improve retention strategies.
 
-![alt text](<Screenshot (139).png>)
-
 If you find this project useful, please consider giving it a star ⭐ on GitHub. Contributions are also welcome.
+
+![alt text](<Screenshot (139)-1.png>)
 
 ## **Table of Contents**
 - [Technologies Used](#technologies-used)
@@ -76,4 +76,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## **Contact**
 For any inquiries or feedback, please contact me at https://nafisalawalidris.github.io/13/.
-```bash
