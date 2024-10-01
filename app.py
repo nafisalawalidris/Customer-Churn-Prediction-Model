@@ -13,23 +13,47 @@ def predict(input_data):
 st.set_page_config(page_title="Customer Churn Prediction", layout="wide")
 
 # Title and description
-st.title("Customer Churn Prediction")
+st.title(" Customer Churn Prediction App ")
 st.markdown("""
-Welcome to the **Customer Churn Prediction** app! 
-Enter customer details below to predict whether they are likely to churn. 
-This application uses a machine learning model to analyse customer behaviour and provide insights.
+    Welcome to the **Customer Churn Prediction** app! 
+    Enter customer details below to predict whether they are likely to churn. 
+    This application uses a machine learning model to analyse customer behavior and provide insights.
 """)
 
 # Create a sidebar for input fields
 st.sidebar.header("👤 Customer Information")
 st.sidebar.write("Please fill in the details below:")
 
+# Styling for sidebar
+st.sidebar.markdown(
+    """
+    <style>
+        .sidebar .sidebar-content {
+            background-color: #f5f5f5; /* Light grey */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4A90E2; /* Blue color for title */
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h2, h3 {
+            font-family: 'Arial', sans-serif;
+        }
+        p {
+            font-family: 'Georgia', serif;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
+
 # Input fields for user data
 tenure = st.sidebar.number_input("Tenure (months)", min_value=0, max_value=100, value=0)
 monthly_charges = st.sidebar.number_input("Monthly Charges ($)", min_value=0.0, format="%.2f")
 total_charges = st.sidebar.number_input("Total Charges ($)", min_value=0.0, format="%.2f")
 
-# Categorical fields
+# Categorical fields with custom styling
 gender = st.sidebar.selectbox("Gender", options=["Select", "Male", "Female"])
 partner = st.sidebar.selectbox("Partner", options=["Select", "Yes", "No"])
 dependents = st.sidebar.selectbox("Dependents", options=["Select", "Yes", "No"])
@@ -47,7 +71,7 @@ paperless_billing = st.sidebar.selectbox("Paperless Billing", options=["Select",
 payment_method = st.sidebar.selectbox("Payment Method", options=["Select", "Electronic check", "Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"])
 
 # Button to make prediction
-if st.sidebar.button("Predict Churn"):
+if st.sidebar.button("🔮 Predict Churn"):
     # Check if all fields have valid selections
     if (gender != "Select" and partner != "Select" and dependents != "Select" and 
         phone_service != "Select" and multiple_lines != "Select" and 
@@ -100,11 +124,11 @@ if st.sidebar.button("Predict Churn"):
         prediction_text = "Churn" if prediction[0] == 1 else "Not Churn"
 
         # Display results with a compelling layout
-        st.subheader("🎉 Prediction Result")
+        st.subheader("🎉 Prediction Result 🎉")
         st.markdown(f"""
-        **Prediction:** **{prediction_text}**  
-        The customer is **{prediction_text}** based on the provided information.
-        """)
+        <h2 style='color: #FF6347;'>**Prediction:** **{prediction_text}**</h2>
+        <p>The customer is **{prediction_text}** based on the provided information.</p>
+        """, unsafe_allow_html=True)
 
         if prediction[0] == 1:
             st.warning("🔴 Action Required: Consider strategies to retain this customer!")
